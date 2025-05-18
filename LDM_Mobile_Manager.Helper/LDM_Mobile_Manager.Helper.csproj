@@ -7,15 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.2" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.36.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.36.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\LDM_Mobile_Manager.Common\LDM_Mobile_Manager.Common.csproj" />
   </ItemGroup>
 
 </Project>

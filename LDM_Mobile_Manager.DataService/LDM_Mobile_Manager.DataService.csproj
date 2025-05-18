@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LDM_Mobile_Manager.Helper\LDM_Mobile_Manager.Helper.csproj" />
-  </ItemGroup>
-
 </Project>
