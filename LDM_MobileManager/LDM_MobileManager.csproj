@@ -1,9 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BH.Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LDM_Mobile_Manager.DataService\LDM_Mobile_Manager.DataService.csproj" />
+    <ProjectReference Include="..\LDM_Mobile_Manager.Helper\LDM_Mobile_Manager.Helper.csproj" />
+  </ItemGroup>
 
 </Project>

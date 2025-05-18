@@ -1,5 +1,6 @@
 using LDM_Mobile_Manager.DSL;
 using LDM_Mobile_Manager.LDM_Mobile_Manager.Helper;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +21,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger();
 }
 
 app.UseHttpsRedirection();
