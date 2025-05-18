@@ -1,6 +1,6 @@
 ﻿namespace LDM_Mobile_Manager.Helper
 {
-    public class Class1
+    public class ConfigManager
     {
 
     }
