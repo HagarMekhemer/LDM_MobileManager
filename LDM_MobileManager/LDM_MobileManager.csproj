@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LDM_Mobile_Manager.Common\LDM_Mobile_Manager.Common.csproj" />
+    <ProjectReference Include="..\LDM_Mobile_Manager.DataService\LDM_Mobile_Manager.DataService.csproj" />
+  </ItemGroup>
+
 </Project>
