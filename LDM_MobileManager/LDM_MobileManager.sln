@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDM_MobileManager", "LDM_MobileManager.csproj", "{8498CF3F-AB19-4B20-9375-526C921A6E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDM_Mobile_Manager.Common", "..\LDM_Mobile_Manager.Common\LDM_Mobile_Manager.Common.csproj", "{9882C84F-005E-47A0-821C-9B2771AF7286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDM_Mobile_Manager.DataAccess", "..\LDM_Mobile_Manager.DataAccess\LDM_Mobile_Manager.DataAccess.csproj", "{BE56BD7D-9535-4CD8-8D21-C9821B7E7ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDM_Mobile_Manager.DataService", "..\LDM_Mobile_Manager.DataService\LDM_Mobile_Manager.DataService.csproj", "{195A7A5B-A8A3-47A2-8331-0E82E825C4A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDM_Mobile_Manager.Helper", "..\LDM_Mobile_Manager.Helper\LDM_Mobile_Manager.Helper.csproj", "{2D253276-664E-42BB-B771-8775AC28A01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDM_Mobile_Manager.Repo", "..\LDM_Mobile_Manager.Repo\LDM_Mobile_Manager.Repo.csproj", "{AAA1B560-235F-4DAA-A891-48EDBC841D95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8498CF3F-AB19-4B20-9375-526C921A6E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8498CF3F-AB19-4B20-9375-526C921A6E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8498CF3F-AB19-4B20-9375-526C921A6E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8498CF3F-AB19-4B20-9375-526C921A6E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9882C84F-005E-47A0-821C-9B2771AF7286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9882C84F-005E-47A0-821C-9B2771AF7286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9882C84F-005E-47A0-821C-9B2771AF7286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9882C84F-005E-47A0-821C-9B2771AF7286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE56BD7D-9535-4CD8-8D21-C9821B7E7ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE56BD7D-9535-4CD8-8D21-C9821B7E7ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE56BD7D-9535-4CD8-8D21-C9821B7E7ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE56BD7D-9535-4CD8-8D21-C9821B7E7ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{195A7A5B-A8A3-47A2-8331-0E82E825C4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195A7A5B-A8A3-47A2-8331-0E82E825C4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195A7A5B-A8A3-47A2-8331-0E82E825C4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195A7A5B-A8A3-47A2-8331-0E82E825C4A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D253276-664E-42BB-B771-8775AC28A01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D253276-664E-42BB-B771-8775AC28A01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D253276-664E-42BB-B771-8775AC28A01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D253276-664E-42BB-B771-8775AC28A01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA1B560-235F-4DAA-A891-48EDBC841D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA1B560-235F-4DAA-A891-48EDBC841D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA1B560-235F-4DAA-A891-48EDBC841D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA1B560-235F-4DAA-A891-48EDBC841D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2285D6C-4BC4-4787-9119-D6E1EE45BBC6}
+	EndGlobalSection
+EndGlobal
