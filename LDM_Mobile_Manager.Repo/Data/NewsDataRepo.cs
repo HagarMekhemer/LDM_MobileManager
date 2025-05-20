@@ -1,6 +1,5 @@
 ﻿using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
 using LDM_Mobile_Manager.Interfaces.Repositories;
-using LDM_MobileManager.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

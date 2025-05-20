@@ -1,7 +1,6 @@
 ﻿using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
 using LDM_Mobile_Manager.DataService.Data;
 using LDM_Mobile_Manager.Interfaces.Services;
-using LDM_MobileManager.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +10,7 @@ namespace LDM_MobileManager.Controllers
     [ApiController]
     public class DataController : ControllerBase
     {
-        //private readonly INewsDataService _newsDataService;
-        //private readonly IPromotionService _promotionService;
-        //private readonly IBrochureService _brochureService;
-        //private readonly IPressService _pressService;
+
         private readonly IBaseDSL<GetNewsDataResponseDTO> _newsDataService;
         private readonly IBaseDSL<GetPromotionResponseDTO> _promotionService;
         private readonly IBaseDSL<GetBrochuresResponseDTO> _brochureService;
