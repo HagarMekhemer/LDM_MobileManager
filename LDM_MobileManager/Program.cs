@@ -26,6 +26,7 @@ builder.Services.AddScoped<IBaseRepo<GetClientDataVersionResponseDTO>, ClientDat
 builder.Services.AddScoped<IBaseRepo<GetContactDetailsResponseDTO>, ContactDetailsRepo>();
 builder.Services.AddScoped<IBaseRepo<GetGalleryImageResponseDTO>, GalleryRepo>();
 builder.Services.AddScoped<IBaseRepo<GetHealthTipResponseDTO>, HealthTipsRepo>();
+builder.Services.AddScoped<IBaseRepo<GetMobileUserProfileResponseDTO>, MobileUserProfileRepo>();
 builder.Services.AddScoped<IBaseRepo<GetNewsletterResponseDTO>, NewslettersRepo>();
 builder.Services.AddScoped<IBaseRepo<GetScientificNewsResponseDTO>, ScientificNewsRepo>();
 
