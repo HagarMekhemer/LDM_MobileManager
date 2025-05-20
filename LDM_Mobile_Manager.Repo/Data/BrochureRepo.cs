@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo.Data
 {
-    public class BrochureRepository : IBaseRepository<GetBrochuresResponseDTO>
+    public class BrochureRepo : IBaseRepo<GetBrochuresResponseDTO>
     {
         public async Task<List<GetBrochuresResponseDTO>> GetAllAsync()
         {

@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.DataService.Data
 {
-    public class BaseService<T> : IBaseService<T>
+    public class BaseDSL<T> : IBaseDSL<T>
     {
-        private readonly IBaseRepository<T> _repository;
+        private readonly IBaseRepo<T> _repository;
 
-        public BaseService(IBaseRepository<T> repository)
+        public BaseDSL(IBaseRepo<T> repository)
         {
             _repository = repository;
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo.Data
 {
-    public class NewsDataRepository: IBaseRepository<GetNewsDataResponseDTO>
+    public class NewsDataRepo: IBaseRepo<GetNewsDataResponseDTO>
     {
         public async Task<List<GetNewsDataResponseDTO>> GetAllAsync()
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo.Data
 {
-    public class PromotionRepository: IBaseRepository<GetPromotionResponseDTO>
+    public class PromotionRepo: IBaseRepo<GetPromotionResponseDTO>
     {
         public async Task<List<GetPromotionResponseDTO>> GetAllAsync()
         {

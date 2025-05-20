@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Interfaces.Services
 {
-    public interface IBaseService<T>
+    public interface IBaseDSL<T>
     {
         Task<ResponseDTO<List<T>>> GetAllAsync();
     }

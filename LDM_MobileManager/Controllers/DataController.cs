@@ -15,19 +15,34 @@ namespace LDM_MobileManager.Controllers
         //private readonly IPromotionService _promotionService;
         //private readonly IBrochureService _brochureService;
         //private readonly IPressService _pressService;
-        private readonly IBaseService<GetNewsDataResponseDTO> _newsDataService;
-        private readonly IBaseService<GetPromotionResponseDTO> _promotionService;
-        private readonly IBaseService<GetBrochuresResponseDTO> _brochureService;
-        private readonly IBaseService<GetPressResponseDTO> _pressService;
-        public DataController(IBaseService<GetNewsDataResponseDTO> newsDataService,
-                              IBaseService<GetPromotionResponseDTO> promotionService,
-                              IBaseService<GetBrochuresResponseDTO> brochureService,
-                              IBaseService<GetPressResponseDTO> pressService)
+        private readonly IBaseDSL<GetNewsDataResponseDTO> _newsDataService;
+        private readonly IBaseDSL<GetPromotionResponseDTO> _promotionService;
+        private readonly IBaseDSL<GetBrochuresResponseDTO> _brochureService;
+        private readonly IBaseDSL<GetPressResponseDTO> _pressService;
+        private readonly IBaseDSL<GetBranchesResponseDTO> _branchService;
+        private readonly IBaseDSL<GetFeedbackMailResponseDTO> _feedbackMailService;
+        private readonly IBaseDSL<GetLabServicesResponseDTO> _labServicesService;
+        private readonly IBaseDSL<GetAboutLabDetailsResponseDTO> _aboutLabDetailsService;
+
+
+        public DataController(IBaseDSL<GetNewsDataResponseDTO> newsDataService,
+                              IBaseDSL<GetPromotionResponseDTO> promotionService,
+                              IBaseDSL<GetBrochuresResponseDTO> brochureService,
+                              IBaseDSL<GetPressResponseDTO> pressService,
+                              IBaseDSL<GetBranchesResponseDTO> branchService,
+                              IBaseDSL<GetFeedbackMailResponseDTO> feedbackMailService,
+                              IBaseDSL<GetLabServicesResponseDTO> labServicesService,
+                              IBaseDSL<GetAboutLabDetailsResponseDTO> aboutLabDetailsService)
         {
             _newsDataService = newsDataService;
             _promotionService = promotionService;
             _brochureService = brochureService;
             _pressService = pressService;
+            _branchService = branchService;
+            _feedbackMailService = feedbackMailService;
+            _labServicesService = labServicesService;
+            _aboutLabDetailsService = aboutLabDetailsService;
+
         }
 
         [HttpGet("GetNewsData")]
@@ -58,6 +73,34 @@ namespace LDM_MobileManager.Controllers
             return Ok(response);
         }
 
+        [HttpGet("GetBranches")]
+        public async Task<IActionResult> GetBranches()
+        {
+            var response = await _branchService.GetAllAsync();       
+            return Ok(response);
+        }
 
+        [HttpGet("GetFeedbackMail")]
+        public async Task<IActionResult> GetFeedbackMail()
+        {
+            var response = await _feedbackMailService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetLabServices")]
+        public async Task<IActionResult> GetLabServices()
+        {
+            var response = await _labServicesService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetAboutLabDetails")]
+        public async Task<IActionResult> GetAboutLabDetails()
+        {
+            var response = await _aboutLabDetailsService.GetAllAsync();
+            return Ok(response);
+        }
     }
+
 }
+

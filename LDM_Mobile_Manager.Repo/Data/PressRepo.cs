@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo.Data
 {
-    public class PressRepository : IBaseRepository<GetPressResponseDTO>
+    public class PressRepo : IBaseRepo<GetPressResponseDTO>
     {
         public async Task<List<GetPressResponseDTO>> GetAllAsync()
         {

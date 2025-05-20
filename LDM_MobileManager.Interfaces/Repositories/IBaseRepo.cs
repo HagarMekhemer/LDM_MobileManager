@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Interfaces.Repositories
 {
-    public interface IBaseRepository<T>
+    public interface IBaseRepo<T>
     {
         Task<List<T>> GetAllAsync();
 
