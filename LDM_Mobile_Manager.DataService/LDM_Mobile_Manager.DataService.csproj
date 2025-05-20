@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LDM_MobileManager.Interfaces\LDM_Mobile_Manager.Interfaces.csproj" />
     <ProjectReference Include="..\LDM_Mobile_Manager.DataAccess\LDM_Mobile_Manager.DataAccess.csproj" />
     <ProjectReference Include="..\LDM_Mobile_Manager.Helper\LDM_Mobile_Manager.Helper.csproj" />
   </ItemGroup>

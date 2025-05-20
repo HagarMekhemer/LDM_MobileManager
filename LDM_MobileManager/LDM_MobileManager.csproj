@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LDM_Mobile_Manager.DataService\LDM_Mobile_Manager.DataService.csproj" />
     <ProjectReference Include="..\LDM_Mobile_Manager.Helper\LDM_Mobile_Manager.Helper.csproj" />
+    <ProjectReference Include="..\LDM_Mobile_Manager.Repo\LDM_Mobile_Manager.Repo.csproj" />
   </ItemGroup>
 
 </Project>
