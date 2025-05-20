@@ -1,4 +1,5 @@
 ﻿using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
+using LDM_Mobile_Manager.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo
 {
-    public class ContactDetailsRepo
+    public class ContactDetailsRepo : IBaseRepo<GetContactDetailsResponseDTO>
     {
-        public async Task<List<GetContactDetailsResponseDTO>> GetContactDetails()
+        public async Task<List<GetContactDetailsResponseDTO>> GetAllAsync()
         {
             var data = new List<GetContactDetailsResponseDTO>
             {

@@ -1,12 +1,13 @@
 ﻿using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
+using LDM_Mobile_Manager.Interfaces.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo
 {
-    public class HealthTipsRepo
+    public class HealthTipsRepo : IBaseRepo<GetHealthTipResponseDTO>
     {
-        public async Task<List<GetHealthTipResponseDTO>> GetHealthTips()
+        public async Task<List<GetHealthTipResponseDTO>> GetAllAsync()
         {
             // Simulated data
             var tips = new List<GetHealthTipResponseDTO>

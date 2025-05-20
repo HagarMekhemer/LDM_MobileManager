@@ -1,4 +1,5 @@
 ﻿using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
+using LDM_Mobile_Manager.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo
 {
-    public class ClientDataVersionRepo
+    public class ClientDataVersionRepo : IBaseRepo<GetClientDataVersionResponseDTO>
     {
-        public async Task<List<GetClientDataVersionResponseDTO>> GetClientDataVersions()
+        public async Task<List<GetClientDataVersionResponseDTO>> GetAllAsync()
         {
             var versions = new List<GetClientDataVersionResponseDTO>
             {

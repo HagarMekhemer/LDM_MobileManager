@@ -19,6 +19,16 @@ namespace LDM_MobileManager.Controllers
         private readonly IBaseDSL<GetFeedbackMailResponseDTO> _feedbackMailService;
         private readonly IBaseDSL<GetLabServicesResponseDTO> _labServicesService;
         private readonly IBaseDSL<GetAboutLabDetailsResponseDTO> _aboutLabDetailsService;
+        private readonly IBaseDSL<GetBookResponseDTO> _booksService;
+        private readonly IBaseDSL<GetClientDataVersionResponseDTO> _clientDataVersionService;
+        private readonly IBaseDSL<GetContactDetailsResponseDTO> _contactDetailsService;
+        private readonly IBaseDSL<GetGalleryImageResponseDTO> _galleryImageService;
+        private readonly IBaseDSL<GetHealthTipResponseDTO> _healthTipService;
+        private readonly IBaseDSL<GetMobileUserProfileResponseDTO> _mobileUserProfileService;
+        private readonly IBaseDSL<GetNewsletterResponseDTO> _newsletterService;
+        private readonly IBaseDSL<GetScientificNewsResponseDTO> _scientificNewsService;
+
+
 
 
         public DataController(IBaseDSL<GetNewsDataResponseDTO> newsDataService,
@@ -28,7 +38,15 @@ namespace LDM_MobileManager.Controllers
                               IBaseDSL<GetBranchesResponseDTO> branchService,
                               IBaseDSL<GetFeedbackMailResponseDTO> feedbackMailService,
                               IBaseDSL<GetLabServicesResponseDTO> labServicesService,
-                              IBaseDSL<GetAboutLabDetailsResponseDTO> aboutLabDetailsService)
+                              IBaseDSL<GetAboutLabDetailsResponseDTO> aboutLabDetailsService,
+                              IBaseDSL<GetBookResponseDTO> booksService,
+                              IBaseDSL<GetClientDataVersionResponseDTO> clientDataVersionService,
+                              IBaseDSL<GetContactDetailsResponseDTO> contactDetailsService,
+                              IBaseDSL<GetGalleryImageResponseDTO> galleryImageService,
+                              IBaseDSL<GetHealthTipResponseDTO> healthTipService,
+                              IBaseDSL<GetMobileUserProfileResponseDTO> mobileUserProfileService,
+                              IBaseDSL<GetNewsletterResponseDTO> newsletterService,
+                              IBaseDSL<GetScientificNewsResponseDTO> scientificNewsService)
         {
             _newsDataService = newsDataService;
             _promotionService = promotionService;
@@ -38,6 +56,14 @@ namespace LDM_MobileManager.Controllers
             _feedbackMailService = feedbackMailService;
             _labServicesService = labServicesService;
             _aboutLabDetailsService = aboutLabDetailsService;
+            _booksService = booksService;
+            _clientDataVersionService = clientDataVersionService;
+            _contactDetailsService = contactDetailsService;
+            _galleryImageService = galleryImageService;
+            _healthTipService = healthTipService;
+            _mobileUserProfileService = mobileUserProfileService;
+            _newsletterService = newsletterService;
+            _scientificNewsService = scientificNewsService;
 
         }
 
@@ -96,6 +122,63 @@ namespace LDM_MobileManager.Controllers
             var response = await _aboutLabDetailsService.GetAllAsync();
             return Ok(response);
         }
+
+        [HttpGet("GetBooks")]
+        public async Task<ActionResult> GetBooks()
+        {
+            var response = await _booksService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetClientDataVersion")]
+        public async Task<ActionResult> GetClientDataVersion()
+        {
+            var response = await _clientDataVersionService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetContactDetails")]
+        public async Task<ActionResult> GetContactDetails()
+        {
+            var response = await _contactDetailsService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetGalleryImage")]
+        public async Task<ActionResult> GetGalleryImage()
+        {
+            var response = await _galleryImageService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetHealthTip")]
+        public async Task<ActionResult> GetHealthTip()
+        {
+            var response = await _healthTipService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetMobileUserProfile")]
+        public async Task<ActionResult> GetMobileUserProfile()
+        {
+            var response = await _mobileUserProfileService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetNewsletter")]
+        public async Task<ActionResult> GetNewsletter()
+        {
+            var response = await _newsletterService.GetAllAsync();
+            return Ok(response);
+        }
+
+        [HttpGet("GetScientificNews")]
+        public async Task<ActionResult> GetScientificNews()
+        {
+            var response = await _scientificNewsService.GetAllAsync();
+            return Ok(response);
+        }
+
     }
 
 }

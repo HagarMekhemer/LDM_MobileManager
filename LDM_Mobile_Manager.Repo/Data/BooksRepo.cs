@@ -1,4 +1,5 @@
 ﻿using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
+using LDM_Mobile_Manager.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo
 {
-    public class BooksRepo
+    public class BooksRepo : IBaseRepo<GetBookResponseDTO>
     {
-        public async Task<List<GetBookResponseDTO>> GetBooks()
+
+        public async Task<List<GetBookResponseDTO>> GetAllAsync()
         {
             var books = new List<GetBookResponseDTO>
             {

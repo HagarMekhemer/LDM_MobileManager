@@ -1,4 +1,5 @@
 ﻿using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
+using LDM_Mobile_Manager.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace LDM_Mobile_Manager.Repo
 {
-    public class GalleryRepo
+    public class GalleryRepo : IBaseRepo<GetGalleryImageResponseDTO>
     {
-        public async Task<List<GetGalleryImageResponseDTO>> GetGalleryImages()
+        public async Task<List<GetGalleryImageResponseDTO>> GetAllAsync()
         {
             var images = new List<GetGalleryImageResponseDTO>
             {

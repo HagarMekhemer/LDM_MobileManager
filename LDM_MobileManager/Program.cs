@@ -4,6 +4,7 @@ using LDM_Mobile_Manager.DSL;
 using LDM_Mobile_Manager.Interfaces.Repositories;
 using LDM_Mobile_Manager.Interfaces.Services;
 using LDM_Mobile_Manager.LDM_Mobile_Manager.Helper;
+using LDM_Mobile_Manager.Repo;
 using LDM_Mobile_Manager.Repo.Data;
 using Microsoft.AspNetCore.Builder;
 using System.Reflection;
@@ -20,6 +21,14 @@ builder.Services.AddScoped<IBaseRepo<GetBranchesResponseDTO>, BranchRepo>();
 builder.Services.AddScoped<IBaseRepo<GetFeedbackMailResponseDTO>, FeedbackMailRepo>();
 builder.Services.AddScoped<IBaseRepo<GetLabServicesResponseDTO>, LabServicesRepo>();
 builder.Services.AddScoped<IBaseRepo<GetAboutLabDetailsResponseDTO>, AboutLabDetailsRepo>();
+builder.Services.AddScoped<IBaseRepo<GetBookResponseDTO>, BooksRepo>();
+builder.Services.AddScoped<IBaseRepo<GetClientDataVersionResponseDTO>, ClientDataVersionRepo>();
+builder.Services.AddScoped<IBaseRepo<GetContactDetailsResponseDTO>, ContactDetailsRepo>();
+builder.Services.AddScoped<IBaseRepo<GetGalleryImageResponseDTO>, GalleryRepo>();
+builder.Services.AddScoped<IBaseRepo<GetHealthTipResponseDTO>, HealthTipsRepo>();
+builder.Services.AddScoped<IBaseRepo<GetNewsletterResponseDTO>, NewslettersRepo>();
+builder.Services.AddScoped<IBaseRepo<GetScientificNewsResponseDTO>, ScientificNewsRepo>();
+
 
 builder.Services.AddScoped(typeof(IBaseDSL<>), typeof(BaseDSL<>));
 
