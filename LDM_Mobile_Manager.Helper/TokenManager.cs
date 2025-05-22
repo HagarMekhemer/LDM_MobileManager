@@ -17,12 +17,7 @@ namespace LDM_Mobile_Manager.LDM_Mobile_Manager.Helper
         public TokenManager(IConfiguration configuration)
         {
             _jwtSecret = configuration["Jwt:SecretKey"];
-            _authSettings = new ConfigManager
-            {
-                ClientCode = configuration["AuthSettings:ClientCode"],
-                Username = configuration["AuthSettings:Username"],
-                Password = configuration["AuthSettings:Password"]
-            };
+            _authSettings = new ConfigManager(configuration);
         }
 
         public GenerateTokenResponseDTO GetToken(TokenCredentialsRequestDTO user)
@@ -36,7 +31,7 @@ namespace LDM_Mobile_Manager.LDM_Mobile_Manager.Helper
             if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Password) || string.IsNullOrWhiteSpace(user.ClientCode))
                 throw new Exception("All fields are required.");
 
-            if (user.Username != _authSettings.Username || user.Password != _authSettings.Password || user.ClientCode != _authSettings.ClientCode)
+            if (user.Username != _authSettings.UserName || user.Password != _authSettings.Password || user.ClientCode != _authSettings.ClientCode)
                 throw new Exception("Invalid credentials.");
         }
 
