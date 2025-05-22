@@ -67,7 +67,6 @@ public class ErrorHandlerMiddleware
                 break;
         }
 
-        // Show full error details in development
         if (env.IsDevelopment())
         {
             message += $" | Exception: {exception.Message} | StackTrace: {exception.StackTrace}";
