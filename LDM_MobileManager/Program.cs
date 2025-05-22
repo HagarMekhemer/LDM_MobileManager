@@ -18,6 +18,7 @@ builder.Services.AddSwaggerGen();
 
 // Inject custom services
 RegisterAssemblies();
+builder.Services.AddSingleton<ConfigManager>();
 builder.Services.AddSingleton<TokenManager>();
 builder.Services.AddScoped<TokenDSL>();
 builder.Services.AddScoped(typeof(IBaseDSL<>), typeof(BaseDSL<>));
@@ -36,6 +37,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
 

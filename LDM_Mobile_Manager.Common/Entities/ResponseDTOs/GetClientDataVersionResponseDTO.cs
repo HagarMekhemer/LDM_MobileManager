@@ -9,13 +9,13 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetClientDataVersionResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Name field is required.")]
         public string Name{get; set;}
 
-        [Required]
+        [Required(ErrorMessage = "The Version field is required.")]
         public int Version { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Modified At field is required.")]
         public DateTime ModifiedAt { get; set; }
 
     }

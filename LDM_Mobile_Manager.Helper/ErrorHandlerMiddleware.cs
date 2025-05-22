@@ -53,7 +53,6 @@ public class ErrorHandlerMiddleware
                 message = ex.Message;
                 break;
 
-            case CustomValidationException:
             case CustomResponseValidationException:
                 statusCode = HttpStatusCode.BadRequest;
                 message = ex.Message;

@@ -9,9 +9,9 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetLabServicesResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Arabic Title field is required.")]
         public string ArabicTitle { get; set; }
-        [Required]
+        [Required(ErrorMessage = "The English Title field is required.")]
         public string EnglishTitle { get; set; }
         public string MappedLISCode { get; set; }
         public string ArabicContentText { get; set; }
