@@ -48,17 +48,6 @@ public class ErrorHandlerMiddleware
                 message = ex.Message;
                 break;
 
-            case ArgumentNullException:
-            case ArgumentException:
-                statusCode = HttpStatusCode.BadRequest;
-                message = ex.Message;
-                break;
-
-            case NotImplementedException:
-                statusCode = HttpStatusCode.NotImplemented;
-                message = ex.Message;
-                break;
-
             case NoContentException:
                 statusCode = HttpStatusCode.NoContent;
                 message = ex.Message;
