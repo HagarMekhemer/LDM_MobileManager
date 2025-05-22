@@ -8,6 +8,7 @@ namespace LDM_MobileManager.Controllers
 {
     [Route("NT/Data")]
     [ApiController]
+    [AllowAnonymous]
     public class DataController : ControllerBase
     {
 

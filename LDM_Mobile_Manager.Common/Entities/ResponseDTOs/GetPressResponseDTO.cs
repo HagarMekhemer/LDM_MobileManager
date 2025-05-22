@@ -9,13 +9,14 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetPressResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Arabic Title field is required.")]
+
         public string ArabicTitle { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The English Title field is required.")]
         public string EnglishTitle { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Content Url field is required.")]
         [Url]
         public string ContentUrl { get; set; }
     }

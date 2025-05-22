@@ -9,13 +9,13 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetBranchesResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Arabic Title field is required.")]
         public string ArabicTitle { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The English Title field is required.")]
         public string EnglishTitle { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The BranchCode field is required.")]
         public string BranchCode { get; set; }
 
         public string BranchPhoneNumber { get; set; }

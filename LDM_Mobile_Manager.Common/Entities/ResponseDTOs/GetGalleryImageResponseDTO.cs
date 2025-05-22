@@ -9,7 +9,7 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetGalleryImageResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Image URL field is required.")]
         public string ImageURL { get; set; }
     }
 }

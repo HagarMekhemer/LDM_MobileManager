@@ -10,16 +10,19 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetPromotionResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Arabic Title field is required.")]
+
         public string ArabicTitle { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The English Title field is required.")]
         public string EnglishTitle { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Promotion Start Date field is required.")]
+
         public string PromotionStartDate => StartDate.ToString("yyyy-MM-dd");
 
-        [Required]
+        [Required(ErrorMessage = "The Promotion EndDate field is required.")]
+
         public string PromotionEndDate => EndDate.ToString("yyyy-MM-dd");
 
         [JsonIgnore]
@@ -28,7 +31,8 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
         [JsonIgnore]
         public DateTime EndDate { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Add Promotion To Home field is required.")]
+
         public bool AddPromotionToHome { get; set; }
 
         [Url]

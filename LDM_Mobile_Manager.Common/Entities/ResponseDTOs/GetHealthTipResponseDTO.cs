@@ -9,10 +9,10 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetHealthTipResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Arabic Title field is required.")]
         public string ArabicTitle { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The English Title field is required.")]
         public string EnglishTitle { get; set; }
         public string ContentUrl { get; set; }
         public string ContentAttachment { get; set; }

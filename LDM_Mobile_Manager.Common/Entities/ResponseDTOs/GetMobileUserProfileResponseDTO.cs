@@ -9,10 +9,10 @@ namespace LDM_Mobile_Manager.Common.Entities.ResponseDTOs
 {
     public class GetMobileUserProfileResponseDTO
     {
-        [Required]
+        [Required(ErrorMessage = "The Profile Name field is required.")]
         public string ProfileName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Active Pages field is required.")]
         public List<string> ActivePages { get; set; }
     }
 }
