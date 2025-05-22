@@ -3,82 +3,78 @@ using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Text.Json.Serialization;
+using Microsoft.Extensions.Options;
 using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
-
-public class ErrorHandlerMiddleware
+namespace LDM_Mobile_Manager.Helper
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<ErrorHandlerMiddleware> _logger;
-    private readonly IHostEnvironment _env;
-
-    public ErrorHandlerMiddleware(RequestDelegate next, ILogger<ErrorHandlerMiddleware> logger, IHostEnvironment env)
+    public class ErrorHandlerMiddleware
     {
-        _next = next;
-        _logger = logger;
-        _env = env;
-    }
-
-    public async Task Invoke(HttpContext context)
-    {
-        try
+        private readonly RequestDelegate _next;
+        private readonly ILogger<ErrorHandlerMiddleware> _logger;
+        private readonly JsonSerializerOptions _jsonOptions = new()
         {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            Converters = { new JsonStringEnumConverter() }
+        };
+
+        public ErrorHandlerMiddleware(
+            RequestDelegate next,
+            ILogger<ErrorHandlerMiddleware> logger)
+        {
+            _next = next;
+            _logger = logger;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            // Remove try-catch and let exceptions propagate
             await _next(context);
         }
-        catch (Exception ex)
+
+        private async Task HandleExceptionAsync(HttpContext context, Exception error)
         {
-            _logger.LogError(ex, "Unhandled exception occurred");
-            await HandleExceptionAsync(context, ex, _env);
+            _logger.LogError(error, "An unhandled exception occurred");
+
+            var response = context.Response;
+            response.ContentType = "application/json";
+
+            HttpStatusCode statusCode;
+            string message;
+
+            switch (error)
+            {
+                case UnauthorizedException:
+                    statusCode = HttpStatusCode.Unauthorized;
+                    message = "Not Authorized";
+                    break;
+
+                case CustomValidationException validationException:
+                    statusCode = HttpStatusCode.BadRequest;
+                    message = validationException.Message;
+                    break;
+
+                case CustomResponseValidationException responseValidationException:
+                    statusCode = HttpStatusCode.InternalServerError;
+                    message = responseValidationException.Message;
+                    break;
+
+                default:
+                    statusCode = HttpStatusCode.InternalServerError;
+                    message = "Please re-try again, if the error persists please contact Administrator";
+                    break;
+            }
+
+            response.StatusCode = (int)statusCode;
+
+            var result = JsonSerializer.Serialize(new ResponseDTO<string>(false, message), _jsonOptions);
+
+            await response.WriteAsync(result);
         }
-    }
-
-    private static Task HandleExceptionAsync(HttpContext context, Exception ex, IHostEnvironment env)
-    {
-        context.Response.ContentType = "application/json";
-
-        HttpStatusCode statusCode;
-        string message;
-
-        switch (ex)
-        {
-            case UnauthorizedException:
-                statusCode = HttpStatusCode.Unauthorized;
-                message = ex.Message;
-                break;
-
-            case NoContentException:
-                statusCode = HttpStatusCode.NoContent;
-                message = ex.Message;
-                break;
-
-            case CustomValidationException:
-            case CustomResponseValidationException:
-                statusCode = HttpStatusCode.BadRequest;
-                message = ex.Message;
-                break;
-
-            default:
-                statusCode = HttpStatusCode.InternalServerError;
-                message = "Please re-try again, if the error persists please contact Administrator";
-                break;
-        }
-
-        if (env.IsDevelopment())
-        {
-            message += $" | Exception: {ex.Message} | StackTrace: {ex.StackTrace}";
-        }
-
-        context.Response.StatusCode = (int)statusCode;
-
-        var response = new ResponseDTO<object>(
-            false,
-            message,
-            null
-        );
-
-        var result = JsonSerializer.Serialize(response);
-        return context.Response.WriteAsync(result);
     }
 }
+
