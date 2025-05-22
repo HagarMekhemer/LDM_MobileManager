@@ -1,6 +1,7 @@
 using LDM_Mobile_Manager.Common.Entities.ResponseDTOs;
 using LDM_Mobile_Manager.DataService.Data;
 using LDM_Mobile_Manager.DSL;
+using LDM_Mobile_Manager.Helper;
 using LDM_Mobile_Manager.Interfaces.Repositories;
 using LDM_Mobile_Manager.Interfaces.Services;
 using LDM_Mobile_Manager.LDM_Mobile_Manager.Helper;
@@ -80,6 +81,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseMiddleware<ErrorHandlerMiddleware>();
+
 app.MapControllers();
+
 
 app.Run();
